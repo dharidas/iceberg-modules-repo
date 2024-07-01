@@ -1,5 +1,14 @@
 # Apache Iceberg Linked In Learning Resources
 
+- [Free Copy of Apache Iceberg the Definitive Guide](https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html?utm_source=linkedincourse&utm_medium=linkedincourse&utm_campaign=linkedincourse&utm_id=linkedincourse&utm_term=linkedincourse&utm_content=linkedincourse)
+
+## Instructors
+
+- [Alex Merced](https://bio.alexmerced.com/data)
+- [Andrew Madson](https://www.linkedin.com/in/andrew-madson/)
+
+## Curriculum
+
 ### Course 1 - Fundamentals of Apache Iceberg
 
 [Course Readme](/course-1/)
@@ -9,11 +18,11 @@
 [Course Readme](/course-2/)
 
 
-### Course 3
+### Course 3 -DataOps with Apache Iceberg using Spark, Nessie, and Dremio
 
 [Course Readme](/course-3/)
 
 
-### Module 4
+### Course 4 - Apache Iceberg for Data Analytics
 
 [Course Readme](/course-4/)
