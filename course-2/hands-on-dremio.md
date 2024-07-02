@@ -386,3 +386,85 @@ COPY INTO nessie.examples.weather_copy_into
 -- Query the Table
 SELECT * FROM nessie.examples.weather_copy_into;
 ```
+
+#### Merge Into
+
+Updating Records and Inserting New Records (Upserts) can be done with Dremio's Merge Into syntax.
+
+```sql
+-- Create the target table
+CREATE TABLE IF NOT EXISTS nessie.examples.target_table (
+  id INTEGER,
+  description VARCHAR
+);
+
+-- Create the source table
+CREATE TABLE IF NOT EXISTS nessie.examples.source_table (
+  id INTEGER,
+  description_1 VARCHAR,
+  description_2 VARCHAR
+);
+
+-- Insert initial data into the target table
+INSERT INTO nessie.examples.target_table (id, description) VALUES
+  (1, 'Original value 1'),
+  (2, 'Original value 2');
+
+-- Insert initial data into the source table
+INSERT INTO nessie.examples.source_table (id, description_1, description_2) VALUES
+  (1, 'Updated value 1', 'Updated value 2'),
+  (3, 'New value 1', 'New value 2');
+
+-- View Target table before merging
+SELECT * FROM nessie.examples.target_table;
+
+-- Perform the merge operation
+MERGE INTO nessie.examples.target_table AS t
+USING nessie.examples.source_table AS s
+ON t.id = s.id
+WHEN MATCHED THEN
+  UPDATE SET description = s.description_2
+WHEN NOT MATCHED THEN
+  INSERT (id, description) VALUES (s.id, s.description_1);
+
+-- View Target table before merging
+SELECT * FROM nessie.examples.target_table;
+```
+
+### Partitioning
+
+```sql
+-- Create the table with initial partitioning on 'name'
+CREATE TABLE nessie.examples.partitioned_table (
+  id INTEGER,
+  name VARCHAR,
+  "count" INTEGER,
+  ts TIMESTAMP
+)
+PARTITION BY (name);
+
+-- Insert initial data into the partitioned table
+INSERT INTO nessie.examples.partitioned_table VALUES
+  (1, 'Alice', NULL, TIMESTAMP '2024-07-02 12:00:00'),
+  (2, 'Bob', 5, TIMESTAMP '2024-07-02 12:05:00'),
+  (3, 'Catherine', 10, TIMESTAMP '2024-07-02 12:10:00');
+
+-- Query the table before updating partitioning
+SELECT * FROM nessie.examples.partitioned_table;
+
+-- Add a new partition field to the table
+ALTER TABLE nessie.examples.partitioned_table
+  ADD PARTITION FIELD bucket(4, ts);
+
+-- Insert additional data into the updated partitioned table
+INSERT INTO nessie.examples.partitioned_table VALUES
+  (4, 'David', 15, TIMESTAMP '2024-07-02 12:15:00'),
+  (5, 'Eve', 20, TIMESTAMP '2024-07-02 12:20:00');
+
+-- Query the table after updating partitioning
+SELECT * FROM nessie.examples.partitioned_table;
+```
+
+### Turning off Environment
+
+To shut down all containers run the command `docker compose down` in the folder with the `docker-compose.yml` file.
