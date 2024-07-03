@@ -61,4 +61,27 @@ SELECT * FROM nessie.hr.employees.all_manifests;
 SELECT * FROM nessie.hr.employees.refs;
 ```
 
-## Querying 
+## Querying in Dremio
+
+```sql
+-- Querying the data files metadata of an Iceberg table
+SELECT * 
+FROM TABLE(table_files('nessie.hr.employees'));
+
+-- Querying the history of an Iceberg table
+SELECT * 
+FROM TABLE(table_history('nessie.hr.employees'));
+
+-- Querying the manifests metadata of an Iceberg table
+SELECT * 
+FROM TABLE(table_manifests('nessie.hr.employees'));
+
+-- Querying the partitions statistics of an Iceberg table
+SELECT * 
+FROM TABLE(table_partitions('nessie.hr.employees'));
+
+-- Querying the snapshots metadata of an Iceberg table
+SELECT * 
+FROM TABLE(table_snapshot('nessie.hr.employees'));
+```
+
