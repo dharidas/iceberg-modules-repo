@@ -4,4 +4,5 @@
 
 - [Hands-On with Spark/Iceberg](./hands-on-spark.md)
 - [Hands-On with Dremio/Iceberg](./hands-on-dremio.md)
+- [Metadata Tables](./metadata-tables.md)
 

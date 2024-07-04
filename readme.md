@@ -1,6 +1,6 @@
 # Apache Iceberg Linked In Learning Resources
 
-![Alex and Andrew](./banner.png)
+![Alex and Andrew](./banner1.png)
 
 - [Free Copy of Apache Iceberg the Definitive Guide](https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html?utm_source=linkedincourse&utm_medium=linkedincourse&utm_campaign=linkedincourse&utm_id=linkedincourse&utm_term=linkedincourse&utm_content=linkedincourse)
 
