@@ -1,4 +1,4 @@
-# Apache Iceberg Linked In Learning Resources
+# Apache Iceberg Course Resources
 
 ![Alex and Andrew](./banner1.png)
 
