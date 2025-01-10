@@ -20,11 +20,11 @@
 [Course Readme](/course-2/)
 
 
-### Course 3 -DataOps with Apache Iceberg using Spark, Nessie, and Dremio
+### Course 3 - Machine Learning & AI with Iceberg
 
 [Course Readme](/course-3/)
 
 
-### Course 4 - Apache Iceberg for Data Analytics
+### Course 4 - DataOps with Apache Iceberg using Spark, Nessie, and Dremio
 
 [Course Readme](/course-4/)
