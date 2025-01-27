@@ -1,0 +1,1 @@
+SELECT * FROM Samples."samples.dremio.com"."NYC-weather.csv"

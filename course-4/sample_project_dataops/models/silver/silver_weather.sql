@@ -1,0 +1,1 @@
+SELECT * FROM {{ ref('bronze_weather') }} LIMIT 100
